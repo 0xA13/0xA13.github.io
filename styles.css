@@ -507,6 +507,8 @@ button {
   display: grid;
   gap: 0;
   margin-top: 8px;
+  width: 100%;
+  min-width: 0;
 }
 .social-row {
   display: grid;
@@ -516,6 +518,7 @@ button {
   border-bottom: 1px solid var(--rule);
   align-items: center;
   font-size: 13px;
+  min-width: 0;
 }
 .social-row .k {
   font-size: 10px;
@@ -523,7 +526,14 @@ button {
   text-transform: uppercase;
   color: var(--fg-2);
 }
-.social-row .v { color: var(--fg); font-family: var(--mono); }
+.social-row .v {
+  color: var(--fg);
+  font-family: var(--mono);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .social-row .copy {
   font-size: 10px;
   letter-spacing: 0.14em;
@@ -796,15 +806,10 @@ button {
     row-gap: 6px;
   }
   .social-row {
-    grid-template-columns: 70px 1fr auto;
-    gap: 10px;
+    grid-template-columns: 60px 1fr auto;
+    gap: 8px;
     padding: 12px 0;
     font-size: 12px;
-  }
-  .social-row .v {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     min-width: 0;
   }
 
