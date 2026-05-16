@@ -70,7 +70,7 @@ function AboutView() {
     className: "about-socials"
   }, /*#__PURE__*/React.createElement(SocialRow, {
     k: "linkedin",
-    v: "anakapulica",
+    v: "linkedin.com/in/anakapulica",
     copy: atob("aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2FuYWthcHVsaWNh")
   }), /*#__PURE__*/React.createElement(SocialRow, {
     k: "github",
