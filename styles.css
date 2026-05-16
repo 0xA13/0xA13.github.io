@@ -140,13 +140,16 @@ button {
 
 .hero-stage {
   position: relative;
-  height: calc(100vh - 80px);
+  height: calc(100dvh - 80px);
   min-height: 600px;
   max-height: 880px;
   display: flex;
   align-items: stretch;
   justify-content: center;
   cursor: crosshair;
+  /* Vertical pan only — never let touch interactions on the hero drift the
+     ASCII or trigger a horizontal pan on mobile. */
+  touch-action: pan-y;
 }
 .hero-ascii {
   flex: 1;
@@ -654,87 +657,182 @@ button {
 
 /* ─── responsive ─── */
 
+/* ─── tablet (≤ 900px) ─── */
+
 @media (max-width: 900px) {
-  .frame { padding: 0 18px; }
-  .hero-stage { height: 65vh; min-height: 420px; }
-  .hero-ascii { font-size: 11px; }
-  .post-row {
-    grid-template-columns: 36px 1fr 90px;
-    gap: 16px;
+  .frame { padding: 0 22px; }
+  .topbar { padding: 14px 0; }
+  .topbar .nav { gap: 24px; }
+  .topbar .mark { font-size: 20px; }
+  .topbar .nav button { font-size: 18px; }
+  /* Use small viewport height (svh) — does not shift when iOS URL bar
+     collapses, so the ASCII art does not re-fit during scroll. */
+  .hero-stage {
+    height: min(55svh, 520px);
+    min-height: 360px;
+    max-height: 560px;
+    cursor: default;
   }
+  .hero-ascii { font-size: 11px; }
+  .hero-corner { font-size: 14px; }
+  .post-row {
+    grid-template-columns: 36px 1fr 92px;
+    gap: 14px;
+    padding: 18px 0;
+  }
+  .post-row:hover { padding-left: 0; padding-right: 0; background: transparent; }
   .post-row .tags { display: none; }
-  .post-title { font-size: 38px; }
-  .about { grid-template-columns: 1fr; gap: 36px; }
-  .hero-caption { flex-direction: column; gap: 12px; }
-  .hero-caption .meta { text-align: left; }
+  .post-row .arrow { display: none; }
+  .post-title { font-size: 28px; }
+  .post-view { padding: 24px 0 72px; }
+  .about { grid-template-columns: 1fr; gap: 32px; padding: 28px 0 72px; }
+  .hero-caption {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 0 22px;
+  }
+  .hero-caption .lede { font-size: 24px; max-width: none; }
+  .hero-caption .meta { text-align: left; font-size: 14px; }
+  .sect-head { font-size: 16px; padding: 22px 0 12px; }
 }
 
-/* ─── mobile (≤ 640px) ─── */
+/* ─── phone (≤ 600px) ─── */
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   html, body { font-size: 12px; }
-
-  .frame { padding: 0 14px; }
-
-  /* topbar */
-  .topbar { padding: 14px 0; }
+  .frame { padding: 0 16px; }
+  .topbar { padding: 12px 0; }
+  .topbar-inner { gap: 10px; }
+  .topbar .mark { font-size: 18px; }
+  .topbar .nav { gap: 16px; }
+  .topbar .nav button { font-size: 16px; }
+  /* keyboard shortcut hint is not relevant on touch devices */
   .topbar .cmdk-hint { display: none; }
-  .topbar .nav { gap: 20px; }
 
-  /* hero */
-  .hero-stage { height: 50vh; min-height: 280px; }
-  .hero-ascii { font-size: 8.5px; }
-  .hero-corner { font-size: 12px; }
-  .hero-caption { flex-direction: column; gap: 8px; padding: 12px 0 20px; }
-  .hero-caption .lede { font-size: 22px; max-width: 100%; }
-  .hero-caption .meta { text-align: left; font-size: 14px; }
+  /* Compact hero, locked to small-viewport units so iOS URL-bar collapse
+     does not re-trigger the ASCII fit during scroll. */
+  .hero-stage {
+    height: min(50svh, 420px);
+    min-height: 280px;
+    max-height: 460px;
+  }
+  /* Soften the bottom of the cat sooner so it never collides with caption. */
+  .hero-ascii {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, rgba(0,0,0,0.45) 65%, transparent 80%);
+            mask-image: linear-gradient(to bottom, #000 0%, #000 45%, rgba(0,0,0,0.45) 65%, transparent 80%);
+  }
+  .hero-corner {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .hero-corner.bl, .hero-corner.br { line-height: 1.15; }
 
-  /* section head */
-  .sect-head { font-size: 16px; flex-wrap: wrap; gap: 4px; }
+  .hero-caption {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 0 20px;
+  }
+  .hero-caption .lede { font-size: 20px; letter-spacing: 0.01em; }
+  .hero-caption .meta { font-size: 12px; }
 
-  /* post list */
+  .sect-head {
+    font-size: 14px;
+    padding: 18px 0 10px;
+    letter-spacing: 0.06em;
+  }
+
+  .tagrow {
+    padding: 10px 0 14px;
+    font-size: 9px;
+    gap: 2px;
+  }
+  .tag { padding: 4px 6px; }
+
+  /* Stack each post row: number+date on one line, then title+summary */
   .post-row {
-    grid-template-columns: 36px 1fr;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "n     date"
+      "body  body";
+    gap: 4px 12px;
     padding: 16px 0;
   }
-  .post-row .tags,
-  .post-row .date { display: none; }
-  .post-row .title { font-size: 20px; }
-  .post-row .summary { -webkit-line-clamp: 2; }
-
-  /* post view */
-  .post-title { font-size: 32px; }
-  .post-summary { font-size: 13px; margin-bottom: 32px; }
-  .post-body p { font-size: 13px; }
-  .post-body pre { font-size: 11px; padding: 12px 14px; }
-  .post-thumb-large { font-size: 10px; overflow-x: auto; max-width: 100%; }
-
-  /* about */
-  .about {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 24px 0 60px;
+  .post-row .n { grid-area: n; }
+  .post-row > div:nth-child(2) { grid-area: body; }
+  .post-row .date { grid-area: date; font-size: 10px; }
+  .post-row .tags { display: none; }
+  .post-row .arrow { display: none; }
+  .post-row .title { font-size: 22px; line-height: 1.1; }
+  .post-row .summary {
+    font-size: 11px;
+    margin-top: 6px;
+    -webkit-line-clamp: 2;
   }
-  .about-portrait {
-    font-size: 8px;
-    overflow-x: auto;
+
+  /* Post reading view */
+  .post-view { padding: 20px 0 64px; }
+  .post-back { margin-bottom: 28px; }
+  .post-meta-top {
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+  }
+  .post-title { font-size: 32px; margin: 0 0 20px; }
+  .post-summary {
+    font-size: 13px;
+    margin: 0 0 32px;
+    padding-bottom: 20px;
+  }
+  .post-body h2 { font-size: 18px; margin: 32px 0 10px; }
+  .post-body p { font-size: 13px; line-height: 1.65; }
+  .post-body pre {
+    padding: 12px 14px;
+    font-size: 11px;
     max-width: 100%;
   }
-  .about-list { grid-template-columns: 86px 1fr; font-size: 12px; }
-  .about-body h2.spaced { margin-top: 28px; }
+  .post-thumb-large { font-size: 10px; }
 
-  /* social rows */
+  /* About / whoami */
+  .about { gap: 28px; padding: 24px 0 64px; }
+  .about-portrait { font-size: 9px; overflow: hidden; }
+  .about-body h2 { font-size: 18px; }
+  .about-body h2.spaced { margin-top: 28px; }
+  .about-body p { font-size: 13px; }
+  .about-list {
+    grid-template-columns: 90px 1fr;
+    font-size: 12px;
+    row-gap: 6px;
+  }
   .social-row {
-    grid-template-columns: 64px 1fr auto;
+    grid-template-columns: 70px 1fr auto;
     gap: 10px;
+    padding: 12px 0;
     font-size: 12px;
   }
+  .social-row .v {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
 
-  /* footer */
-  .footer-row { flex-direction: column; gap: 6px; }
-
-  /* command palette */
-  .cmdk { width: calc(100vw - 28px); }
+  /* Command palette: full-width sheet, no iOS zoom on focus */
   .cmdk-backdrop { padding-top: 8vh; }
+  .cmdk { max-width: calc(100vw - 16px); }
+  .cmdk-prompt { padding: 12px 14px; }
+  .cmdk input { font-size: 16px; }
+  .cmdk-list { max-height: 60vh; }
+  .cmdk-item { padding: 10px 14px; font-size: 12px; }
+  .cmdk-footer { display: none; }
+
+  .footer { padding: 24px 0 20px; }
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 9px;
+  }
 }
