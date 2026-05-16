@@ -663,8 +663,78 @@ button {
     gap: 16px;
   }
   .post-row .tags { display: none; }
-  .post-title { font-size: 28px; }
+  .post-title { font-size: 38px; }
   .about { grid-template-columns: 1fr; gap: 36px; }
   .hero-caption { flex-direction: column; gap: 12px; }
   .hero-caption .meta { text-align: left; }
+}
+
+/* ─── mobile (≤ 640px) ─── */
+
+@media (max-width: 640px) {
+  html, body { font-size: 12px; }
+
+  .frame { padding: 0 14px; }
+
+  /* topbar */
+  .topbar { padding: 14px 0; }
+  .topbar .cmdk-hint { display: none; }
+  .topbar .nav { gap: 20px; }
+
+  /* hero */
+  .hero-stage { height: 50vh; min-height: 280px; }
+  .hero-ascii { font-size: 8.5px; }
+  .hero-corner { font-size: 12px; }
+  .hero-caption { flex-direction: column; gap: 8px; padding: 12px 0 20px; }
+  .hero-caption .lede { font-size: 22px; max-width: 100%; }
+  .hero-caption .meta { text-align: left; font-size: 14px; }
+
+  /* section head */
+  .sect-head { font-size: 16px; flex-wrap: wrap; gap: 4px; }
+
+  /* post list */
+  .post-row {
+    grid-template-columns: 36px 1fr;
+    gap: 10px;
+    padding: 16px 0;
+  }
+  .post-row .tags,
+  .post-row .date { display: none; }
+  .post-row .title { font-size: 20px; }
+  .post-row .summary { -webkit-line-clamp: 2; }
+
+  /* post view */
+  .post-title { font-size: 32px; }
+  .post-summary { font-size: 13px; margin-bottom: 32px; }
+  .post-body p { font-size: 13px; }
+  .post-body pre { font-size: 11px; padding: 12px 14px; }
+  .post-thumb-large { font-size: 10px; overflow-x: auto; max-width: 100%; }
+
+  /* about */
+  .about {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 0 60px;
+  }
+  .about-portrait {
+    font-size: 8px;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+  .about-list { grid-template-columns: 86px 1fr; font-size: 12px; }
+  .about-body h2.spaced { margin-top: 28px; }
+
+  /* social rows */
+  .social-row {
+    grid-template-columns: 64px 1fr auto;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  /* footer */
+  .footer-row { flex-direction: column; gap: 6px; }
+
+  /* command palette */
+  .cmdk { width: calc(100vw - 28px); }
+  .cmdk-backdrop { padding-top: 8vh; }
 }
