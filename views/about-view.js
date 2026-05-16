@@ -4,36 +4,7 @@
 const {
   useState: useStateAb
 } = React;
-const ASCII_CARD = `┌──────────────────────────────────────┐
-│  $ whoami                            │
-│  > 0xA13                             │
-│                                      │
-│  ANA KAPULICA                        │
-│  ───────────────                     │
-│  penetration tester · hobbyist       │ 
-│  malware analyst · vuln research     │
-│                                      │
-│                                      │
-│  $ uname -a                          │
-│  0xa13 6.x #1 SMP x86_64 GNU/Linux   │
-│                                      │
-│  $ id                                │
-│  uid=1000(0xa13) gid=1000(staff)     │
-│  groups=re,malware,fuzzing           │
-│                                      │
-│  $ uptime                            │
-│   ~ since 2001                       │
-│                                      │
-│  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-│  ░░██████░░░░░░░░██░░░░██░░░░░░░░░░  │
-│  ░░██░░██░░░░░░░░██░░██░░░░░░░░░░░░  │
-│  ░░██████░░░░░░░░░████░░░░░░░░░░░░░  │
-│  ░░██░░██░░░░░░░░██░░██░░░░░░░░░░░░  │
-│  ░░██░░██░██████░██░░░░██░░0xA13░░░  │
-│  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-│                                      │
-│  $ _                                 │
-└──────────────────────────────────────┘`;
+
 function copyToClipboard(text) {
   if (navigator.clipboard && window.isSecureContext) {
     return navigator.clipboard.writeText(text);
