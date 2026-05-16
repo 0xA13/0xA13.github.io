@@ -56,11 +56,7 @@ function AboutView() {
     className: "about"
   }, /*#__PURE__*/React.createElement("div", {
     className: "about-body"
-  }, /*#__PURE__*/React.createElement("h2", null, "SUBJECT"), /*#__PURE__*/React.createElement("p", null, "Ana Kapulica \u2014 online as ", /*#__PURE__*/React.createElement("strong", {
-    style: {
-      color: "var(--accent)"
-    }
-  }, "0xA13"), ". Infrastructure penetration tester, with detours into malware analysis and vulnerability research. This site is where I leave notes on what I take apart."), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("h2", null, "SUBJECT"), /*#__PURE__*/React.createElement("p", null, "Infrastructure penetration tester, with detours into malware analysis and vulnerability research. This site is where I leave notes on what I take apart."), /*#__PURE__*/React.createElement("h2", {
     className: "spaced"
   }, "FOCUS"), /*#__PURE__*/React.createElement("dl", {
     className: "about-list"
