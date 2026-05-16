@@ -20,7 +20,13 @@
 
 * { box-sizing: border-box; }
 
-html, body {
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+}
+
+body {
   margin: 0;
   padding: 0;
   background: var(--bg);
@@ -32,7 +38,7 @@ html, body {
   font-feature-settings: "ss02", "calt", "zero";
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection { background: var(--accent); color: var(--bg); }
