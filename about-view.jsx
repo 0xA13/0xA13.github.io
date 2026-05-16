@@ -7,23 +7,25 @@ const ASCII_CARD = `┌───────────────────
 │                                      │
 │  ANA KAPULICA                        │
 │  ───────────────                     │
+│  penetration tester · hobbyist       │ 
 │  malware analyst · vuln research     │
+│                                      │
 │                                      │
 │  $ uname -a                          │
 │  0xa13 6.x #1 SMP x86_64 GNU/Linux   │
 │                                      │
 │  $ id                                │
 │  uid=1000(0xa13) gid=1000(staff)     │
-│  groups=re,detection,crypto          │
+│  groups=re,malware,fuzzing           │
 │                                      │
 │  $ uptime                            │
-│   ~ since 2017                       │
+│   ~ since 2001                       │
 │                                      │
 │  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-│  ░░██████░██████░██░░░░██░░░░░░░░░░  │
-│  ░░██░░██░██░░░░░██░░██░░░░░░░░░░░░  │
-│  ░░██████░██████░░████░░░░░░░░░░░░░  │
-│  ░░██░░██░██░░░░░██░░██░░░░░░░░░░░░  │
+│  ░░██████░░░░░░░░██░░░░██░░░░░░░░░░  │
+│  ░░██░░██░░░░░░░░██░░██░░░░░░░░░░░░  │
+│  ░░██████░░░░░░░░░████░░░░░░░░░░░░░  │
+│  ░░██░░██░░░░░░░░██░░██░░░░░░░░░░░░  │
 │  ░░██░░██░██████░██░░░░██░░0xA13░░░  │
 │  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
 │                                      │
@@ -76,25 +78,24 @@ function AboutView() {
         <div className="about-body">
           <h2>SUBJECT</h2>
           <p>
-            Ana Kapulica — online as <strong style={{ color: "var(--accent)" }}>0xA13</strong>.
-            Reverse engineer focused on Windows malware, with detours into vulnerability
-            research and side-channel work. This site is where I leave notes on what I take apart.
+            Ana Kapulica - online as <strong style={{ color: "var(--accent)" }}>0xA13</strong>.
+            Infrastructure penetration tester, with detours into malware analysis & vulnerability
+            research. This site is where I leave notes on what I take apart.
           </p>
 
           <h2 className="spaced">FOCUS</h2>
           <dl className="about-list">
-            <dt>primary</dt><dd>malware reversing — Windows, ELF; unpacker authoring</dd>
+            <dt>primary</dt><dd>penetration testing, malware reversing</dd>
             <dt>secondary</dt><dd>vulnerability research, exploit development</dd>
-            <dt>tertiary</dt><dd>detection engineering — YARA, Sigma, ETW</dd>
-            <dt>tools</dt><dd>IDA Pro, Ghidra, x64dbg, WinDbg, Volatility, radare2</dd>
-            <dt>writes</dt><dd>C, Python, a little Rust when patience permits</dd>
+            <dt>tertiary</dt><dd>detection engineering - YARA, Sigma</dd>
+            <dt>tools</dt><dd>IDA Pro, Ghidra, x64dbg, WinDbg</dd>
+            <dt>writes</dt><dd>C, Java, Python</dd>
           </dl>
 
           <h2 className="spaced">RULES OF ENGAGEMENT</h2>
           <p className="muted">
-            Posts here are personal lab notes — not a representation of any employer.
-            All samples are detonated in isolated VMs on an air-gapped network. Where
-            CVEs are involved, vendor coordination is complete before publication.
+            Posts here are personal lab notes, not a representation of any employer.
+            Where CVEs are involved, vendor coordination is complete before publication.
           </p>
 
           <h2 className="spaced">REACH</h2>
@@ -109,10 +110,7 @@ function AboutView() {
 
           <h2 className="spaced">COLOPHON</h2>
           <p className="muted">
-            Hand-rolled. IBM Plex Mono. No frameworks beyond what's strictly needed,
-            no analytics, no fonts loaded from networks I don't trust. The skull on
-            the front page is rendered live — a signed-distance field shaded with a
-            character ramp, perturbed by your cursor.
+            I love my cat Gary.
           </p>
         </div>
       </div>
