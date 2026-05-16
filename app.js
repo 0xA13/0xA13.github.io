@@ -144,7 +144,7 @@ function Footer() {
     className: "footer-row"
   }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
     className: "strong"
-  }, "0xA13 / ANA KAPULICA"), " \xB7 lab notes \xB7 2024 \u2014 2026"), /*#__PURE__*/React.createElement("span", null, "no cookies \xB7 no analytics \xB7 pgp 0xA13F\xB79C2B"))));
+  }, "0xA13 / ANA KAPULICA"), " \xB7 lab notes \xB7 2024 \u2014 2026"), /*#__PURE__*/React.createElement("span", null, "boo"))));
 }
 function App() {
   const [view, setView] = useState("index"); // index | whoami | post
