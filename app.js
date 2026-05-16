@@ -58,7 +58,7 @@ function Hero() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "lede"
   }, /*#__PURE__*/React.createElement(DecodeText, {
-    text: "Lab notes on malware, vulnerabilities, and the occasional side-channel.",
+    text: "Lab notes on hacking, malware, and vulnerabilities.",
     startNow: true,
     durMs: 700
   })))));
