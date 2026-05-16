@@ -49,7 +49,7 @@ function Hero() {
     "data-screen-label": "01 Hero"
   }, /*#__PURE__*/React.createElement("div", {
     className: "hero-corner bl"
-  }, /*#__PURE__*/React.createElement("div", null, total.toString().padStart(3, "0"), " entries"), /*#__PURE__*/React.createElement("div", null, "since 2024")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, total.toString().padStart(3, "0"), " entries"), /*#__PURE__*/React.createElement("div", null, "since 2025")), /*#__PURE__*/React.createElement("div", {
     className: "hero-corner br"
   }, /*#__PURE__*/React.createElement("div", {
     className: "strong"
