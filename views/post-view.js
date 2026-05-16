@@ -53,7 +53,7 @@ function PostView({
     style: {
       color: "var(--fg-1)"
     }
-  }, "0xA13"), " \xB7 pgp 0xA13F\u20269C2B"))));
+  }, "0xA13")))));
 }
 window.PostView = PostView;
 })();
