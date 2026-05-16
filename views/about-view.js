@@ -71,11 +71,11 @@ function AboutView() {
   }, /*#__PURE__*/React.createElement(SocialRow, {
     k: "linkedin",
     v: "anakapulica",
-    copy: "https://www.linkedin.com/in/anakapulica"
+    copy: atob("aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2FuYWthcHVsaWNh")
   }), /*#__PURE__*/React.createElement(SocialRow, {
     k: "github",
     v: "github.com/0xA13",
-    copy: "https://github.com/0xA13"
+    copy: atob("aHR0cHM6Ly9naXRodWIuY29tLzB4QTEz")
   })))));
 }
 window.AboutView = AboutView;
