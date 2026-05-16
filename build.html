@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>build — recompile JSX</title>
+  <style>
+    body { font: 14px/1.5 ui-monospace, Menlo, monospace; background: #0a0a0a; color: #e8e6df; padding: 32px; max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 22px; margin: 0 0 8px; }
+    p { color: #a8a6a0; margin: 4px 0 24px; }
+    pre { background: #111; border-left: 2px solid #ff3b3b; padding: 12px 16px; overflow-x: auto; font-size: 12px; line-height: 1.5; white-space: pre-wrap; }
+    .ok { color: #5fff8f; }
+    .err { color: #ff3b3b; }
+    button { background: #ff3b3b; color: #0a0a0a; border: none; padding: 10px 18px; font: inherit; font-weight: 600; cursor: pointer; letter-spacing: 0.08em; text-transform: uppercase; }
+    button:hover { background: #ff5555; }
+    .row { display: flex; gap: 8px; margin: 12px 0 4px; }
+    code { background: #111; padding: 2px 6px; border-radius: 2px; }
+  </style>
+</head>
+<body>
+  <h1>build — recompile JSX</h1>
+  <p>
+    Open this page from the project root (e.g. with <code>python -m http.server</code> or <code>npx serve</code>), click <strong>compile</strong>, then save the offered files into their original paths. After that, push to GitHub.
+  </p>
+  <p>
+    You only need this if you edit a <code>.jsx</code> file. Adding/removing posts in <code>data/posts.js</code> needs no recompile.
+  </p>
+
+  <div class="row">
+    <button id="go">compile</button>
+    <button id="dl" disabled>download all</button>
+  </div>
+
+  <pre id="out">ready.</pre>
+
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+  <script>
+    const FILES = [
+      'app.jsx',
+      'components/ascii-hero.jsx',
+      'components/decode-text.jsx',
+      'components/command-palette.jsx',
+      'views/post-view.jsx',
+      'views/about-view.jsx',
+    ];
+
+    const out = document.getElementById('out');
+    const dl = document.getElementById('dl');
+    const log = (msg, cls) => {
+      const line = document.createElement('div');
+      if (cls) line.className = cls;
+      line.textContent = msg;
+      out.appendChild(line);
+    };
+
+    let compiled = [];
+
+    function download(path, content) {
+      const blob = new Blob([content], { type: 'text/javascript' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = path.replace(/.*\//, '');
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    document.getElementById('go').onclick = async () => {
+      out.textContent = '';
+      compiled = [];
+      for (const f of FILES) {
+        try {
+          const src = await fetch(f + '?t=' + Date.now()).then(r => {
+            if (!r.ok) throw new Error(r.status + ' ' + f);
+            return r.text();
+          });
+          const code = Babel.transform(src, {
+            presets: ['react'],
+            sourceType: 'script',
+            compact: false,
+            comments: true,
+          }).code;
+          // Wrap in IIFE so top-level identifiers don't collide across files
+          const wrapped = `(function () {\n${code}\n})();\n`;
+          const dest = f.replace(/\.jsx$/, '.js');
+          compiled.push({ path: dest, code: wrapped });
+          log('✓ ' + f + ' → ' + dest + '  (' + wrapped.length + ' B)', 'ok');
+        } catch (e) {
+          log('✗ ' + f + ': ' + e.message, 'err');
+        }
+      }
+      if (compiled.length) {
+        log('');
+        log('done. click "download all" — your browser will save each .js file. Drop them back into their folders, matching the paths shown above.');
+        dl.disabled = false;
+      }
+    };
+
+    dl.onclick = () => {
+      compiled.forEach((c, i) => setTimeout(() => download(c.path, c.code), i * 250));
+    };
+  </script>
+</body>
+</html>
