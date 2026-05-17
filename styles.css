@@ -1,4 +1,3 @@
-
 :root {
   --bg: #050505;
   --bg-1: #0c0c0c;
@@ -56,7 +55,7 @@ button {
   cursor: pointer;
 }
 
-/*  shell  */
+/* shell */
 
 .shell {
   position: relative;
@@ -74,7 +73,7 @@ button {
   z-index: 2;
 }
 
-/*  top bar (minimal)  */
+/* top bar */
 
 .topbar {
   position: sticky;
@@ -140,7 +139,7 @@ button {
   color: var(--fg-1);
 }
 
-/*  hero stage  */
+/* hero stage */
 
 .hero-stage {
   position: relative;
@@ -220,7 +219,7 @@ button {
   line-height: 1.1;
 }
 
-/* section header  slimmer */
+/* section header */
 .sect-head {
   display: flex;
   justify-content: space-between;
@@ -240,7 +239,7 @@ button {
   margin-right: 10px;
 }
 
-/*  index / posts  */
+/* index / posts */
 
 .index {
   padding: 0 0 80px;
@@ -364,7 +363,7 @@ button {
 }
 .post-row:hover .thumb { display: block; }
 
-/*  post view  */
+/* post view */
 
 .post-view {
   padding: 32px 0 96px;
@@ -420,7 +419,7 @@ button {
   line-height: 1.1;
 }
 .post-body h2::before {
-  content: "\A7  ";
+  content: "\A7" " ";
   color: var(--fg-2);
 }
 .post-body p {
@@ -451,7 +450,7 @@ button {
   color: var(--fg-1);
 }
 
-/*  whoami  */
+/* whoami */
 
 .about {
   padding: 40px 0 96px;
@@ -482,7 +481,7 @@ button {
   margin: 0 0 14px;
   line-height: 1.1;
 }
-.about-body h2::before { content: "\A7  "; color: var(--fg-2); }
+.about-body h2::before { content: "\A7" " "; color: var(--fg-2); }
 .about-body h2.spaced { margin-top: 40px; }
 .about-body p {
   font-size: 14px;
@@ -554,7 +553,7 @@ button {
 .social-row .copy:hover,
 .social-row .copy.ok { color: var(--accent); border-color: var(--accent-dim); }
 
-/*  command palette  */
+/* command palette */
 
 .cmdk-backdrop {
   position: fixed;
@@ -650,7 +649,7 @@ button {
   border-radius: 2px;
 }
 
-/*  footer  */
+/* footer */
 
 .footer {
   border-top: 1px solid var(--rule);
@@ -668,12 +667,12 @@ button {
 }
 .footer-row .strong { color: var(--fg-1); }
 
-/*  decode text  */
+/* decode text */
 .decode { display: inline-block; }
 
-/*  responsive  */
+/* responsive */
 
-/*  tablet ( 900px)  */
+/* tablet (max 900px) */
 
 @media (max-width: 900px) {
   .frame { padding: 0 22px; }
@@ -710,7 +709,7 @@ button {
   .sect-head { font-size: 16px; padding: 22px 0 12px; }
 }
 
-/*  phone ( 600px)  */
+/* phone (max 600px) */
 
 @media (max-width: 600px) {
   html, body { font-size: 12px; }
@@ -838,54 +837,7 @@ button {
   }
 }
 
-/*  pagination  */
-
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 32px 0 0;
-  border-top: 1px solid var(--rule);
-  margin-top: 8px;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--fg-2);
-}
-.page-btn {
-  color: var(--fg-2);
-  transition: color 120ms;
-  letter-spacing: 0.14em;
-  font-size: 11px;
-  text-transform: uppercase;
-}
-.page-btn:hover:not(.disabled) { color: var(--accent); }
-.page-btn.disabled { opacity: 0.3; cursor: default; }
-.page-nums {
-  display: flex;
-  gap: 4px;
-}
-.page-num {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: var(--fg-2);
-  padding: 4px 8px;
-  border: 1px solid transparent;
-  transition: all 120ms;
-}
-.page-num:hover { color: var(--fg); }
-.page-num.active {
-  color: var(--accent);
-  border-color: var(--accent-dim);
-}
-
-@media (max-width: 600px) {
-  .pagination { padding: 24px 0 0; }
-  .page-num { padding: 4px 6px; font-size: 10px; }
-  .page-btn { font-size: 10px; }
-}
-
-/* --- pagination --- */
+/* pagination */
 
 .pagination {
   display: flex;
