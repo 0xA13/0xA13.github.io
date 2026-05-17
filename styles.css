@@ -1,4 +1,4 @@
-@charset "UTF-8";
+
 :root {
   --bg: #050505;
   --bg-1: #0c0c0c;
@@ -56,7 +56,7 @@ button {
   cursor: pointer;
 }
 
-/* â”€â”€â”€ shell â”€â”€â”€ */
+/*  shell  */
 
 .shell {
   position: relative;
@@ -74,7 +74,7 @@ button {
   z-index: 2;
 }
 
-/* â”€â”€â”€ top bar (minimal) â”€â”€â”€ */
+/*  top bar (minimal)  */
 
 .topbar {
   position: sticky;
@@ -140,7 +140,7 @@ button {
   color: var(--fg-1);
 }
 
-/* â”€â”€â”€ hero stage â”€â”€â”€ */
+/*  hero stage  */
 
 .hero-stage {
   position: relative;
@@ -220,7 +220,7 @@ button {
   line-height: 1.1;
 }
 
-/* section header â€” slimmer */
+/* section header  slimmer */
 .sect-head {
   display: flex;
   justify-content: space-between;
@@ -240,7 +240,7 @@ button {
   margin-right: 10px;
 }
 
-/* â”€â”€â”€ index / posts â”€â”€â”€ */
+/*  index / posts  */
 
 .index {
   padding: 0 0 80px;
@@ -364,7 +364,7 @@ button {
 }
 .post-row:hover .thumb { display: block; }
 
-/* â”€â”€â”€ post view â”€â”€â”€ */
+/*  post view  */
 
 .post-view {
   padding: 32px 0 96px;
@@ -420,7 +420,7 @@ button {
   line-height: 1.1;
 }
 .post-body h2::before {
-  content: "Â§ ";
+  content: " ";
   color: var(--fg-2);
 }
 .post-body p {
@@ -451,7 +451,7 @@ button {
   color: var(--fg-1);
 }
 
-/* â”€â”€â”€ whoami â”€â”€â”€ */
+/*  whoami  */
 
 .about {
   padding: 40px 0 96px;
@@ -482,7 +482,7 @@ button {
   margin: 0 0 14px;
   line-height: 1.1;
 }
-.about-body h2::before { content: "Â§ "; color: var(--fg-2); }
+.about-body h2::before { content: " "; color: var(--fg-2); }
 .about-body h2.spaced { margin-top: 40px; }
 .about-body p {
   font-size: 14px;
@@ -554,7 +554,7 @@ button {
 .social-row .copy:hover,
 .social-row .copy.ok { color: var(--accent); border-color: var(--accent-dim); }
 
-/* â”€â”€â”€ command palette â”€â”€â”€ */
+/*  command palette  */
 
 .cmdk-backdrop {
   position: fixed;
@@ -650,7 +650,7 @@ button {
   border-radius: 2px;
 }
 
-/* â”€â”€â”€ footer â”€â”€â”€ */
+/*  footer  */
 
 .footer {
   border-top: 1px solid var(--rule);
@@ -668,12 +668,12 @@ button {
 }
 .footer-row .strong { color: var(--fg-1); }
 
-/* â”€â”€â”€ decode text â”€â”€â”€ */
+/*  decode text  */
 .decode { display: inline-block; }
 
-/* â”€â”€â”€ responsive â”€â”€â”€ */
+/*  responsive  */
 
-/* â”€â”€â”€ tablet (â‰¤ 900px) â”€â”€â”€ */
+/*  tablet ( 900px)  */
 
 @media (max-width: 900px) {
   .frame { padding: 0 22px; }
@@ -710,7 +710,7 @@ button {
   .sect-head { font-size: 16px; padding: 22px 0 12px; }
 }
 
-/* â”€â”€â”€ phone (â‰¤ 600px) â”€â”€â”€ */
+/*  phone ( 600px)  */
 
 @media (max-width: 600px) {
   html, body { font-size: 12px; }
@@ -838,7 +838,7 @@ button {
   }
 }
 
-/* â”€â”€â”€ pagination â”€â”€â”€ */
+/*  pagination  */
 
 .pagination {
   display: flex;
@@ -884,7 +884,8 @@ button {
   .page-num { padding: 4px 6px; font-size: 10px; }
   .page-btn { font-size: 10px; }
 }
-/* â”€â”€â”€ pagination â”€â”€â”€ */
+
+/* --- pagination --- */
 
 .pagination {
   display: flex;
