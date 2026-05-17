@@ -420,7 +420,7 @@ button {
   line-height: 1.1;
 }
 .post-body h2::before {
-  content: " ";
+  content: "\A7 ";
   color: var(--fg-2);
 }
 .post-body p {
@@ -482,7 +482,7 @@ button {
   margin: 0 0 14px;
   line-height: 1.1;
 }
-.about-body h2::before { content: " "; color: var(--fg-2); }
+.about-body h2::before { content: "\A7 "; color: var(--fg-2); }
 .about-body h2.spaced { margin-top: 40px; }
 .about-body p {
   font-size: 14px;
