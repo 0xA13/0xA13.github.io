@@ -62,7 +62,7 @@ function Hero() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "lede"
   }, /*#__PURE__*/React.createElement(DecodeText, {
-    text: "Notes on hacking, malware, and vulnerabilities.",
+    text: "Various notes and writeups.",
     startNow: true,
     durMs: 700
   })))));
@@ -198,7 +198,7 @@ function Footer() {
     className: "footer-row"
   }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
     className: "strong"
-  }, "0xA13 / ANA KAPULICA"), " \xB7 notes \xB7 2026 \u2014 "), /*#__PURE__*/React.createElement("span", null, "boo"))));
+  }, "0xA13"), " \xB7 notes \xB7 2026 \u2014 "), /*#__PURE__*/React.createElement("span", null, "boo"))));
 }
 
 function App() {
