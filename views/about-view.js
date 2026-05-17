@@ -60,7 +60,7 @@ function AboutView() {
     className: "spaced"
   }, "FOCUS"), /*#__PURE__*/React.createElement("dl", {
     className: "about-list"
-  }, /*#__PURE__*/React.createElement("dt", null, "primary"), /*#__PURE__*/React.createElement("dd", null, "penetration testing, malware analysis"), /*#__PURE__*/React.createElement("dt", null, "secondary"), /*#__PURE__*/React.createElement("dd", null, "vulnerability research, exploit development"), /*#__PURE__*/React.createElement("dt", null, "tertiary"), /*#__PURE__*/React.createElement("dd", null, "detection engineering"), /*#__PURE__*/React.createElement("dt", null, "tools"), /*#__PURE__*/React.createElement("dd", null, "IDA, Ghidra, x64dbg, WinDbg, Volatility"), /*#__PURE__*/React.createElement("dt", null, "writes"), /*#__PURE__*/React.createElement("dd", null, "C, Java, Python")), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("dt", null, "primary"), /*#__PURE__*/React.createElement("dd", null, "penetration testing, malware analysis"), /*#__PURE__*/React.createElement("dt", null, "secondary"), /*#__PURE__*/React.createElement("dd", null, "vulnerability research"), /*#__PURE__*/React.createElement("dt", null, "tertiary"), /*#__PURE__*/React.createElement("dd", null, "detection engineering"), /*#__PURE__*/React.createElement("dt", null, "tools"), /*#__PURE__*/React.createElement("dd", null, "Ghidra, x64dbg"), /*#__PURE__*/React.createElement("dt", null, "writes/reads"), /*#__PURE__*/React.createElement("dd", null, "C, Java, Python")), /*#__PURE__*/React.createElement("h2", {
     className: "spaced"
   }, "RULES OF ENGAGEMENT"), /*#__PURE__*/React.createElement("p", {
     className: "muted"
