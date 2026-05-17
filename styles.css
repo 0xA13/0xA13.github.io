@@ -81,7 +81,9 @@ button {
 /* ─── top bar (minimal) ─── */
 
 .topbar {
-  position: relative;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
   z-index: 50;
   padding: 18px 0;
 }
@@ -838,4 +840,51 @@ button {
     gap: 6px;
     font-size: 9px;
   }
+}
+
+/* ─── pagination ─── */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0 0;
+  border-top: 1px solid var(--rule);
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+.page-btn {
+  color: var(--fg-2);
+  transition: color 120ms;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.page-btn:hover:not(.disabled) { color: var(--accent); }
+.page-btn.disabled { opacity: 0.3; cursor: default; }
+.page-nums {
+  display: flex;
+  gap: 4px;
+}
+.page-num {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--fg-2);
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  transition: all 120ms;
+}
+.page-num:hover { color: var(--fg); }
+.page-num.active {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+@media (max-width: 600px) {
+  .pagination { padding: 24px 0 0; }
+  .page-num { padding: 4px 6px; font-size: 10px; }
+  .page-btn { font-size: 10px; }
 }
